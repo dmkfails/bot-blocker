@@ -2,21 +2,31 @@ import sys
 import getopt
 import tweepy
 import configparser
+import csv
 
 
 def main():
-    screen_name = None
     argv = sys.argv[1:]
 
     try:
-        opts, _ = getopt.getopt(argv, "s:", ["screen_name="])
+        opts, _ = getopt.getopt(argv, "s:f:", ["screen_name=", "file="])
         for opt, arg in opts:
             if opt in ["-s", "--screen_name"]:
-                screen_name = arg
-
-        block_user(screen_name)
+                block_user(arg)
+            elif opt in ["-f", "--file"]:
+                read_file(arg)
     except:
         print("error")
+
+
+def read_file(file_name):
+    try:
+        with open(file_name) as f:
+            reader = csv.reader(f)
+            for row in reader:
+                block_user(row[0])
+    except ValueError as e:
+        print(e)
 
 
 def block_user(screen_name):

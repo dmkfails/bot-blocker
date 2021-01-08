@@ -18,6 +18,10 @@ python index.py -s twitter_handle # without '@'
 python index.py --screen_name=twitter_handle # without '@'
 ```
 
+### Sample data for blocking users via CSV
+
+![CSV Data](./assets/img/csv-format.png)
+
 ### Dependencies
 
 - [Tweepy](https://github.com/tweepy/tweepy)
