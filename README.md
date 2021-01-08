@@ -16,7 +16,13 @@ Generate the following keys from [Twitter Developer Portal](https://developer.tw
 ```sh
 python index.py -s twitter_handle # without '@'
 python index.py --screen_name=twitter_handle # without '@'
+python index.py --f /path/to/file  # without '@'
+python index.py --file=/path/to/file # without '@'
 ```
+
+### Sample data for blocking users via CSV
+
+![CSV Data](./assets/img/csv-format.png)
 
 ### Dependencies
 
